@@ -45,7 +45,8 @@
     "jasmine-spec-reporter": "^5.0.2",
     "jsdoc": "^3.6.4",
     "nyc": "^15.0.1",
-    "open": "^7.0.3"
+    "open": "^7.0.3",
+    "pkg": "^4.4.9"
   },
   "scripts": {
     "jsdoc": "jsdoc ./lib -R ./README.md -d doc",
@@ -57,6 +58,15 @@
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
     "cloc": "gulp cloc",
     "build-cesium": "gulp build-cesium"
+  },
+  "pkg": {
+    "scripts": [
+      "./node_modules/cesium/Build/CesiumUnminified/Cesium.js"
+    ],
+    "assets": [
+      "./node_modules/draco3d/draco_encoder.wasm",
+      "./node_modules/draco3d/draco_decoder.wasm"
+    ]
   },
   "bin": {
     "gltf-pipeline": "./bin/gltf-pipeline.js"
